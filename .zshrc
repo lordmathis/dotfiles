@@ -1,6 +1,9 @@
 source $HOME/.antigen.zsh
 source $HOME/.aliases
 
+# Set $PATH
+export PATH=$HOME/bin:$PATH
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
