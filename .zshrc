@@ -1,4 +1,4 @@
-source /usr/share/antigen.zsh
+source $HOME/.antigen.zsh
 source $HOME/.aliases
 
 # Load the oh-my-zsh's library.
