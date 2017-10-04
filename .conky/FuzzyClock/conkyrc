@@ -17,8 +17,10 @@ draw_borders=false,
 -------------------------------------
 --  Window Specifications
 -------------------------------------
-gap_x=-1920,
-gap_y=720,
+alignment="middle_left",
+
+gap_x=0,
+gap_y=200,
 
 minimum_width=1920,
 
