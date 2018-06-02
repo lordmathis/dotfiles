@@ -84,10 +84,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -129,6 +129,18 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# Workspaces back and forth
+bindsym $mod+b workspace back_and_forth
+
+# Move workspace to different monitor
+bindsym $mod+comma move workspace to ouput left
+bindsym $mod+period move workspace to ouput right
+
+
+# Next | Prev worksapce
+bindsym $mod+Next workspace next
+bindsym $mod+Prior workspace prev
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -143,6 +155,9 @@ exec --no-startup-id ~/.fehbg &
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#qOverview
+exec qoverview-config-server
 
 # NetworkManager applet
 #exec --no-startup-id nm-applet
@@ -164,6 +179,9 @@ exec --no-startup-id redshift || redshift -l 48.15:17.10
 
 # Always float Nemo
 for_window [class="Nemo"] floating enable
+
+# Launch Nemo
+bindsym $mod+n exec nemo
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
