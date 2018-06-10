@@ -180,10 +180,6 @@ exec --no-startup-id $HOME/bin/startconky.sh
 # Redshift
 exec --no-startup-id redshift || redshift -l 48.15:17.10
 
-# Float Nemo
-bindsym $mod+Shift+n exec nemo --class floatingNemo
-for_window [class="^floatingNemo$"] floating enable
-
 # Launch Nemo
 bindsym $mod+n exec nemo
 
