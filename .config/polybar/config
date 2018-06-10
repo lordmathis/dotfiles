@@ -49,7 +49,7 @@ font-2 = Weather Icons:size=10;1
 
 modules-left = i3
 modules-center = datetime openweathermap
-modules-right = updates pulseaudio-tail wlan eth xkeyboard battery powermenu
+modules-right = system-usb-udev updates pulseaudio-tail wlan eth xkeyboard battery powermenu
 
 tray-detached = false
 tray-position = left
@@ -192,18 +192,25 @@ interval = 300
 
 click-left = gsimplecal
 
+[module/system-usb-udev]
+type = custom/script
+exec = ~/bin/system-usb-udev.sh
+tail = true
+click-left = ~/bin/system-usb-udev.sh --mount
+click-right = ~/bin/system-usb-udev.sh --unmount
+
 [module/pulseaudio-tail]
 type = custom/script
-exec = ~/bin/pulseaudio-tail.sh
+exec = ~/bin/pulseaudio-tail.sh 2> /dev/null
 tail = true
-click-right = ~/bin/pulseaudio-tail.sh --show
-click-left = ~/bin/pulseaudio-tail.sh --mute
-scroll-up = ~/bin/pulseaudio-tail.sh --up
-scroll-down = ~/bin/pulseaudio-tail.sh --down
+click-right = ~/bin/pulseaudio-tail.sh --show 2> /dev/null
+click-left = ~/bin/pulseaudio-tail.sh --mute 2> /dev/null
+scroll-up = ~/bin/pulseaudio-tail.sh --up 2> /dev/null
+scroll-down = ~/bin/pulseaudio-tail.sh --down 2> /dev/null
 
 [module/updates]
 type = custom/script
-exec = ~/bin/updates.sh
+exec = ~/bin/updates.sh 2> /dev/null
 interval = 600
 format-prefix = ""
 format-underline = ${colors.alert}
@@ -212,7 +219,7 @@ format-underline = ${colors.alert}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 97
+full-at = 96
 
 format-charging = <label-charging>
 format-charging-underline = ${colors.secondary}

@@ -2,16 +2,6 @@
 
 sink=0
 
-show_active() {
-    if pacmd list-sinks | grep active | head -n 1 | grep -q speaker; then
-        echo "speaker"
-    elif pacmd list-sinks | grep active | head -n 1 | grep headphones; then
-        echo "headphones"
-    else
-        echo "hdmi"
-    fi
-}
-
 volume_up() {
     pactl set-sink-volume $sink +1%
 }
