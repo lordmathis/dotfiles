@@ -24,7 +24,7 @@ get_icon() {
     echo $icon
 }
 
-KEY=""
+KEY=`secret-tool lookup openweathermap api_key`
 CITY=""
 UNITS="metric"
 SYMBOL="°"
