@@ -19,5 +19,6 @@ My dotfiles. If you want to use them fork or clone the repo.
 * `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
 * `config checkout`
 * `source .zshrc`
+* run `bin/setup.sh`
 
 ## [Full Guide](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
