@@ -16,6 +16,7 @@
     userId: "810a52e5-06b5-44a9-99a3-c394cee0b9dd"
   "linter-ui-default":
     panelHeight: 69
+    showPanel: true
   minimap:
     plugins:
       "highlight-selected": true
@@ -34,8 +35,7 @@
       "workspace"
       "natively"
     ]
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     hideStatusBarOnMaximizePane: false
     hideTabBarOnMaximizePane: false
