@@ -4,7 +4,7 @@ My dotfiles. If you want to use them fork or clone the repo.
 
 ## Requirements
 
-* [git](https://git-scm.com/), [zsh](http://www.zsh.org/), [antigen](https://github.com/zsh-users/antigen) and [ccat](https://github.com/jingweno/ccat)
+* [git](https://git-scm.com/), [zsh](http://www.zsh.org/), [antigen](https://github.com/zsh-users/antigen) and [bat](https://github.com/sharkdp/bat)
 * Desktop environment: 
   * [i3](https://i3wm.org/)
   * [polybar](https://github.com/jaagr/polybar)

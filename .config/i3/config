@@ -146,7 +146,10 @@ exec setxkbmap -model pc104 -layout us,sk -variant ,qwerty -option grp:win_space
 bindsym $mod+l exec --no-startup-id $HOME/bin/lock.sh $HOME/Pictures/Wallpapers/1-blurred.png
 
 # Start Compton
-exec compton
+exec --no-startup-id compton
+
+# Start nextcloud client
+exec --no-startup-id nextcloud
 
 # Conky
 exec --no-startup-id $HOME/bin/startconky.sh

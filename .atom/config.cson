@@ -6,6 +6,7 @@
     owner: "Matúš Námešný"
     template: "Copyright (c) %y %o"
   core:
+    closeDeletedFileTabs: true
     disabledPackages: [
       "atom-typescript"
       "vim-mode-plus"
