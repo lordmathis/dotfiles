@@ -157,6 +157,9 @@ exec --no-startup-id $HOME/bin/startconky.sh
 # Redshift
 exec --no-startup-id redshift || redshift -l 48.15:17.10
 
+# Switch display output
+exec --no-startup-id $HOME/bin/switch_monitors.sh
+
 # Launch Nemo
 bindsym $mod+n exec nemo
 
