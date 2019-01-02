@@ -155,7 +155,7 @@ exec --no-startup-id nextcloud
 exec --no-startup-id $HOME/bin/startconky.sh
 
 # Redshift
-exec --no-startup-id redshift || redshift -l 48.15:17.10
+exec --no-startup-id redshift-gtk
 
 # Switch display output
 exec --no-startup-id $HOME/bin/switch_monitors.sh
