@@ -160,6 +160,12 @@ exec --no-startup-id redshift-gtk
 # Switch display output
 exec --no-startup-id $HOME/bin/switch_monitors.sh
 
+# KeePassXC
+exec --no-startup-id $HOME/bin/start_keepassxc.sh
+
+# Mate-power-manager
+exec --no-startup-id mate-power-manager
+
 # Launch Nemo
 bindsym $mod+n exec nemo
 

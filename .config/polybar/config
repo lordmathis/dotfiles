@@ -49,7 +49,7 @@ font-2 = Weather Icons:size=10;1
 
 modules-left = i3
 modules-center = datetime openweathermap
-modules-right = system-usb-udev updates pulseaudio-tail wlan eth xkeyboard battery powermenu
+modules-right = system-usb-udev updates pulseaudio-tail wlan eth xkeyboard battery powermenu 
 
 tray-detached = false
 tray-position = left
