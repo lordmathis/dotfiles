@@ -28,6 +28,8 @@ height = 27
 radius = 3.0
 fixed-center = true
 
+monitor = ${env:MONITOR:}
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -37,10 +39,10 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
 font-0 = Icons:size=10;1
@@ -49,10 +51,10 @@ font-2 = Weather Icons:size=10;1
 
 modules-left = i3
 modules-center = datetime openweathermap
-modules-right = system-usb-udev updates pulseaudio-tail wlan eth xkeyboard battery powermenu 
+modules-right = system-usb-udev updates pulseaudio-tail wlan eth xkeyboard battery
 
 tray-detached = false
-tray-position = left
+tray-position = right
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

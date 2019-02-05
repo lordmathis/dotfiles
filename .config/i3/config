@@ -157,17 +157,14 @@ exec --no-startup-id $HOME/bin/startconky.sh
 # Redshift
 exec --no-startup-id redshift-gtk
 
-# Switch display output
-exec --no-startup-id $HOME/bin/switch_monitors.sh
-
 # KeePassXC
 exec --no-startup-id $HOME/bin/start_keepassxc.sh
 
-# Mate-power-manager
-exec --no-startup-id mate-power-manager
-
-# Launch Nemo
+# Nemo
 bindsym $mod+n exec nemo
+
+# Turn on/off internal laptop monitor
+bindsym $mod+Shift+s exec $HOME/bin/switch_monitors.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -203,3 +200,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#bar {
+#  status_command i3blocks
+#}
