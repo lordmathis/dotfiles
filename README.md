@@ -9,6 +9,7 @@ My dotfiles. If you want to use them fork or clone the repo.
   * [i3](https://i3wm.org/)
   * [polybar](https://github.com/jaagr/polybar)
   * [rofi](https://github.com/DaveDavenport/rofi)
+* [gsimplecal](https://github.com/dmedvinsky/gsimplecal)
 * For conky you also need [conky](https://github.com/brndnmtthws/conky), [bash-fuzzy-clock](https://github.com/coreymwamba/bashfuzzyclock), [Poiret One font](https://www.fontsquirrel.com/fonts/poiret-one) and [compton](https://github.com/yshui/compton)
 * Polybar scripts are adapted from [here](https://github.com/x70b1/polybar-scripts) 
 
