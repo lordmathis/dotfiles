@@ -45,13 +45,13 @@ padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Icons:size=10;1
+font-0 = FontAwesome:size=10;1
 font-1 = siji:pixelsize=10;1
 font-2 = Weather Icons:size=10;1
 
-modules-left = i3
+modules-left = powermenu i3
 modules-center = datetime openweathermap
-modules-right = system-usb-udev updates pulseaudio-tail wlan eth xkeyboard battery
+modules-right = system-usb-udev updates pulseaudio-tail wlan eth vpn xkeyboard battery
 
 tray-detached = false
 tray-position = right
@@ -75,7 +75,7 @@ label-indicator-underline = ${colors.secondary}
 
 [module/openweathermap]
 type = custom/script
-exec = ~/bin/openweathermap-simple.sh
+exec = ~/bin/polybar/openweathermap-simple.sh
 interval = 600
 label-font = 3
 
@@ -148,7 +148,7 @@ interface = wlo1
 interval = 3.0
 
 format-connected =  <label-connected>
-label-connected = ""
+label-connected = " %essid%" 
 
 format-disconnected =
 
@@ -175,6 +175,10 @@ label-close-foreground = ${colors.foreground}
 label-separator = " / "
 label-separator-foreground = ${colors.foreground}
 
+;logout
+menu-0-2 = ""
+menu-0-2-exec = i3-msg exit
+menu-0-2-foreground = ${colors.foreground}
 ; reboot
 menu-0-1 = ""
 menu-0-1-exec = systemctl reboot
@@ -196,19 +200,25 @@ click-left = gsimplecal
 
 [module/system-usb-udev]
 type = custom/script
-exec = ~/bin/system-usb-udev.sh
+exec = ~/bin/polybar/system-usb-udev.sh
 tail = true
-click-left = ~/bin/system-usb-udev.sh --mount
-click-right = ~/bin/system-usb-udev.sh --unmount
+click-left = ~/bin/polybar/system-usb-udev.sh --mount
+click-right = ~/bin/polybar/system-usb-udev.sh --unmount
 
 [module/pulseaudio-tail]
 type = custom/script
-exec = ~/bin/pulseaudio-tail.sh 2> /dev/null
+exec = ~/bin/polybar/pulseaudio-tail.sh 2> /dev/null
 tail = true
-click-right = ~/bin/pulseaudio-tail.sh --show 2> /dev/null
-click-left = ~/bin/pulseaudio-tail.sh --mute 2> /dev/null
-scroll-up = ~/bin/pulseaudio-tail.sh --up 2> /dev/null
-scroll-down = ~/bin/pulseaudio-tail.sh --down 2> /dev/null
+click-right = ~/bin/polybar/pulseaudio-tail.sh --show 2> /dev/null
+click-left = ~/bin/polybar/pulseaudio-tail.sh --mute 2> /dev/null
+scroll-up = ~/bin/polybar/pulseaudio-tail.sh --up 2> /dev/null
+scroll-down = ~/bin/polybar/pulseaudio-tail.sh --down 2> /dev/null
+
+[module/vpn]
+type = custom/script
+exec = ~/bin/polybar/vpn_running.sh
+interval = 5
+click-left = ~/bin/polybar/vpn_country.sh
 
 [module/updates]
 type = custom/script
@@ -228,6 +238,11 @@ format-charging-underline = ${colors.secondary}
 
 format-discharging = <label-discharging>
 format-discharging-underline = ${colors.alert}
+
+label-full = ""
+label-discharging = " %percentage%"
+label-charging = " %percentage%"
+
 
 [global/wm]
 margin-top = 5

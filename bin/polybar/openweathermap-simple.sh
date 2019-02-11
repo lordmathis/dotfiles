@@ -25,7 +25,12 @@ get_icon() {
 }
 
 KEY=`secret-tool lookup openweathermap api_key`
-CITY=""
+
+BRNO_CZ="3078610"
+ZVOLEN_SK="3056459"
+
+CITY=$BRNO_CZ
+
 UNITS="metric"
 SYMBOL="°"
 

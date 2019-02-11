@@ -15,14 +15,8 @@ volume_mute() {
 }
 
 volume_print() {
-    if pacmd list-sinks | grep active | head -n 1 | grep -q speaker; then
-        icon=""
-    elif pacmd list-sinks | grep active | head -n 1 | grep headphones; then
-        icon=""
-    else
-        icon=""
-    fi
-
+  
+    icon=""
     muted=$(pamixer --sink $sink --get-mute)
 
     if [ "$muted" = true ]; then

@@ -152,24 +152,32 @@ exec --no-startup-id compton
 exec --no-startup-id nextcloud
 
 # Conky
-exec --no-startup-id $HOME/bin/startconky.sh
+exec --no-startup-id $HOME/bin/startup/start_conky.sh
 
 # Redshift
 exec --no-startup-id redshift-gtk
 
 # KeePassXC
-exec --no-startup-id $HOME/bin/start_keepassxc.sh
+exec --no-startup-id $HOME/bin/startup/start_keepassxc.sh
 
 # Nemo
 bindsym $mod+n exec nemo
 
-# Turn on/off internal laptop monitor
-bindsym $mod+Shift+s exec $HOME/bin/switch_monitors.sh
+# Turn on/off monitors
+bindsym $mod+m exec $HOME/bin/xrandr/switch_monitors.sh -i
+bindsym $mod+Shift+m exec $HOME/bin/xrandr/switch_monitors.sh -e
+
+# Monitor setup
+exec --no-startup-id $HOME/bin/xrandr/monitor_setup.sh single
+
+# Window titlebar
+for_window [class="^.*"] border pixel 2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
