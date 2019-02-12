@@ -170,8 +170,11 @@ bindsym $mod+Shift+m exec $HOME/bin/xrandr/switch_monitors.sh -e
 # Monitor setup
 exec --no-startup-id $HOME/bin/xrandr/monitor_setup.sh single
 
-# Window titlebar
+# Window titlebar and gaps
 for_window [class="^.*"] border pixel 2
+gaps inner 5
+gaps outer 5
+smart_gaps on
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
