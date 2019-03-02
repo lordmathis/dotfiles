@@ -6,6 +6,9 @@ passwordCorrect=00000000
 passwordIncorrect=d23c3dff
 background=00000000
 foreground=ffffffff
+
+qdbus org.keepassxc.KeePassXC.MainWindow /keepassxc org.keepassxc.MainWindow.lockAllDatabases 
+
 i3lock \
 	-t -i "$1" \
 	--timepos="110:h-70" \
