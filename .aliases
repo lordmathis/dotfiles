@@ -1,3 +1,6 @@
 alias mkdir='mkdir -p'
 alias cat='bat'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias doco='docker-compose'
+alias clear='[ $[$RANDOM % 10] = 0 ] && sl; clear || clear'
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'

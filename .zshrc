@@ -4,6 +4,12 @@ source $HOME/.aliases
 # Set $PATH
 export PATH=$HOME/bin:$PATH
 
+# Set Golang
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/Projects/golang/lib
+export PATH=$PATH:$GOPATH/bin
+export GOPATH=$GOPATH:$HOME/Projects/golang/code
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
