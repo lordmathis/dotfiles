@@ -19,6 +19,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle kubectl
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -49,4 +50,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
