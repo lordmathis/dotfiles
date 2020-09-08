@@ -1,4 +1,13 @@
 alias mkdir='mkdir -p'
 alias cat='bat'
+
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
 alias doco='docker-compose'
+alias dops='docker ps -a'
+alias doe='docker exec'
+alias dol='docker logs -f'
+
+alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+
+alias sudo='sudo '
