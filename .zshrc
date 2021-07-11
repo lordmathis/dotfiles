@@ -6,9 +6,11 @@ export PATH=$HOME/bin:$PATH
 
 # Set Golang
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Projects/golang/lib
+export GOPATH=$HOME/Projects/golang
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$GOPATH:$HOME/Projects/golang/code
+
+# Set Kubeconfig
+export KUBECONFIG=$KUBECONFIG:$HOME/Projects/rddl1-kubeconfig.yaml
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -50,3 +52,28 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+#
+# >>> Lazy NVM >>>
+
+lazynvm() {
+  unset -f nvm node npm
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+}
+
+nvm() {
+  lazynvm 
+  nvm $@
+}
+
+node() {
+  lazynvm
+  node $@
+}
+
+npm() {
+  lazynvm
+  npm $@
+}
+
+# <<< Lazy NVM <<<
