@@ -1,4 +1,4 @@
-source $HOME/.antigen.zsh
+#source $HOME/.antigen.zsh
 source $HOME/.aliases
 
 # Set $PATH
@@ -8,30 +8,6 @@ export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Projects/golang
 export PATH=$PATH:$GOPATH/bin
-
-# Set Kubeconfig
-export KUBECONFIG=$KUBECONFIG:$HOME/Projects/rddl1-kubeconfig.yaml
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle kubectl
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-
-# Load the theme.
-antigen theme gentoo
-
-# Tell Antigen that you're done.
-antigen apply
 
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
@@ -77,3 +53,43 @@ npm() {
 }
 
 # <<< Lazy NVM <<<
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
+
+zinit light zinit-zsh/z-a-meta-plugins
+
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZ::plugins/pip/pip.plugin.zsh
+zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
+zinit snippet OMZ::plugins/docker/_docker
+zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
+
+zinit for annexes zsh-users zdharma
+
+# fzf, fd, bat and exa cli tools
+zinit wait"1" lucid from"gh-r" as"null" for \
+     sbin"fzf"          junegunn/fzf-bin \
+     sbin"**/fd"        @sharkdp/fd \
+     sbin"**/bat"       @sharkdp/bat \
+     sbin"exa* -> exa"  ogham/exa
+
+setopt promptsubst
+
+zinit wait lucid for \
+        OMZL::git.zsh
+
+zinit wait'!' lucid for \
+    OMZL::prompt_info_functions.zsh \
+    OMZT::gentoo
