@@ -68,27 +68,25 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
+# Zinit plugins and themes
+
+# Must Load OMZ Git library
+zinit snippet OMZL::git.zsh
+
+# Load Git plugin from OMZ
+zinit snippet OMZP::git
+zinit cdclear -q # <- forget completions provided up to this moment
+
 zinit light zinit-zsh/z-a-meta-plugins
 
-zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/pip/pip.plugin.zsh
 zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
 zinit snippet OMZ::plugins/docker/_docker
 zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
 
-zinit for annexes zsh-users zdharma
-
-# fzf, fd, bat and exa cli tools
-zinit wait"1" lucid from"gh-r" as"null" for \
-     sbin"fzf"          junegunn/fzf-bin \
-     sbin"**/fd"        @sharkdp/fd \
-     sbin"**/bat"       @sharkdp/bat \
-     sbin"exa* -> exa"  ogham/exa
+zinit for annexes zsh-users+fast zdharma
 
 setopt promptsubst
-
-zinit wait lucid for \
-        OMZL::git.zsh
 
 zinit wait'!' lucid for \
     OMZL::prompt_info_functions.zsh \
