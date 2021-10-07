@@ -9,6 +9,11 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Projects/golang
 export PATH=$PATH:$GOPATH/bin
 
+# History
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=15000 # keep 15,000 lines in memory
+export SAVEHIST=10000 # but save only 10,000 of them
+
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
@@ -78,6 +83,7 @@ zinit snippet OMZP::git
 zinit cdclear -q # <- forget completions provided up to this moment
 
 zinit light zinit-zsh/z-a-meta-plugins
+zinit light zsh-users/zsh-history-substring-search
 
 zinit snippet OMZ::plugins/pip/pip.plugin.zsh
 zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
@@ -86,8 +92,11 @@ zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
 
 zinit for annexes zsh-users+fast zdharma
 
-setopt promptsubst
+setopt prompt_subst
 
 zinit wait'!' lucid for \
     OMZL::prompt_info_functions.zsh \
     OMZT::gentoo
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
