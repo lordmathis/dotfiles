@@ -9,7 +9,7 @@ alias dops='docker ps -a'
 alias doe='docker exec'
 alias dol='docker logs -f'
 
-alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 
 alias sudo='sudo '
 
