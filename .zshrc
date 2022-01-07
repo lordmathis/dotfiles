@@ -1,4 +1,3 @@
-#source $HOME/.antigen.zsh
 source $HOME/.aliases
 
 # Set $PATH
@@ -19,8 +18,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# Conda
 __conda_setup="$('/home/matus/bin/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -32,9 +30,8 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
-#
-# >>> Lazy NVM >>>
+
+# Node Version Manager
 
 lazynvm() {
   unset -f nvm node npm
@@ -57,46 +54,22 @@ npm() {
   npm $@
 }
 
-# <<< Lazy NVM <<<
+# ZSH Plugins
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
+## Oh My Zsh
+source ~/.zsh/ohmyzsh/plugins/pip/pip.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/docker/_docker
+source ~/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/git/git.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/golang/golang.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/jsontools/jsontools.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh
 
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit's installer chunk
+### Prompt Theme
+source ~/.zsh/ohmyzsh/themes/gentoo.zsh-theme
 
-# Zinit plugins and themes
-
-# Must Load OMZ Git library
-zinit snippet OMZL::git.zsh
-
-# Load Git plugin from OMZ
-zinit snippet OMZP::git
-zinit cdclear -q # <- forget completions provided up to this moment
-
-zinit light zinit-zsh/z-a-meta-plugins
-zinit light zsh-users/zsh-history-substring-search
-
-zinit snippet OMZ::plugins/pip/pip.plugin.zsh
-zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-zinit snippet OMZ::plugins/docker/_docker
-zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
-
-zinit for annexes zsh-users+fast zdharma
-
-setopt prompt_subst
-
-zinit wait'!' lucid for \
-    OMZL::prompt_info_functions.zsh \
-    OMZT::gentoo
-
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+## zsh-users
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
