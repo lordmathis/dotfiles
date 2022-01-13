@@ -14,8 +14,8 @@ export HISTSIZE=15000 # keep 15,000 lines in memory
 export SAVEHIST=10000 # but save only 10,000 of them
 
 # Bindkeys
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
