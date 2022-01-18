@@ -13,10 +13,6 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=15000 # keep 15,000 lines in memory
 export SAVEHIST=10000 # but save only 10,000 of them
 
-# Bindkeys
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
@@ -58,6 +54,10 @@ npm() {
   npm $@
 }
 
+# Compinit
+autoload -Uz compinit
+compinit
+
 # ZSH Plugins
 
 ## Oh My Zsh
@@ -81,3 +81,7 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Set Prompt
 setopt promptsubst
+
+# Bindkeys
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
