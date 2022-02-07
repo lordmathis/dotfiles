@@ -12,6 +12,7 @@ export PATH=$PATH:$GOPATH/bin
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=15000 # keep 15,000 lines in memory
 export SAVEHIST=10000 # but save only 10,000 of them
+export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
