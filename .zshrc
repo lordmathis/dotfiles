@@ -69,6 +69,7 @@ source ~/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/golang/golang.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/jsontools/jsontools.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh
 
 ### Prompt Theme
