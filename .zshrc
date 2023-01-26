@@ -14,6 +14,10 @@ export HISTSIZE=15000 # keep 15,000 lines in memory
 export SAVEHIST=10000 # but save only 10,000 of them
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
+# Editor
+export EDITOR=nvim
+export GIT_EDITOR=nvim
+
 # VTE
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
@@ -85,5 +89,5 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 setopt promptsubst
 
 # Bindkeys
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
