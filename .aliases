@@ -1,6 +1,7 @@
 alias mkdir='mkdir -p'
 
-alias cat='batcat'
+alias cat='bat'
+alias vim='nvim'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
