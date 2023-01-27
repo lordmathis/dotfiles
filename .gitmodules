@@ -12,7 +12,7 @@
 	url = git@github.com:zsh-users/zsh-completions.git
 [submodule ".zsh/zsh-history-substring-search"]
 	path = .zsh/zsh-history-substring-search
-	url = git@github.com:zsh-users/zsh-history-substring-search
+	url = git@github.com:zsh-users/zsh-history-substring-search.git
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = https://github.com/LazyVim/starter
+	url = git@github.com:LazyVim/LazyVim.git
