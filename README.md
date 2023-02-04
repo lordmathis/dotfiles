@@ -11,9 +11,9 @@ My dotfiles. If you want to use them fork or clone the repo. Each branch has spe
 * `echo ".dotfiles" >> .gitignore`
 * `git clone --bare git@git.namesny.com:Mathis/dotfiles.git $HOME/.dotfiles`
 * `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
+* `config checkout <branch-name>`
 * `config submodule init`
 * `config submodule update`
-* `config checkout`
 * `source .zshrc`
 
 ## [Full Guide](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
