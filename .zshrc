@@ -26,9 +26,9 @@ fi
 # Distro specific aliases
 DISTRO=`cat /etc/os-release | grep ^ID= | cut -f2 -d'='`
 if [ "$DISTRO" = 'arch' ]; then
-  source .aliases_arch
+  source $HOME/.aliases_arch
 else
-  source .aliases_ubuntu
+  source $HOME/.aliases_ubuntu
 fi
 
 # Conda
