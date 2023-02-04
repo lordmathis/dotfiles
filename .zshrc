@@ -23,6 +23,14 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
+# Distro specific aliases
+DISTRO=`cat /etc/os-release | grep ^ID= | cut -f2 -d'='`
+if [ "$DISTRO" = 'arch' ]; then
+  source .aliases_arch
+else
+  source .aliases_ubuntu
+fi
+
 # Conda
 __conda_setup="$('/home/matus/bin/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
