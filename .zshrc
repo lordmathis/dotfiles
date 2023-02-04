@@ -1,30 +1,47 @@
-source $HOME/.antigen.zsh
 source $HOME/.aliases
 
 # Set $PATH
 export PATH=$HOME/bin:$PATH
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# History
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=15000 # keep 15,000 lines in memory
+export SAVEHIST=10000 # but save only 10,000 of them
+export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
+# Editor
+export EDITOR=nvim
+export GIT_EDITOR=nvim
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+# Compinit
+autoload -Uz compinit
+compinit
 
-# Load the theme.
-antigen theme gentoo
+# ZSH Plugins
 
-# Tell Antigen that you're done.
-antigen apply
+## Oh My Zsh
+source ~/.zsh/ohmyzsh/plugins/pip/pip.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/docker/_docker
+source ~/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/git/git.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/golang/golang.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/jsontools/jsontools.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh
 
-# VTE
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
+### Prompt Theme
+source ~/.zsh/ohmyzsh/themes/gentoo.zsh-theme
+
+## zsh-users
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Set Prompt
+setopt promptsubst
+
+# Bindkeys
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
