@@ -15,6 +15,7 @@ export GIT_EDITOR=nvim
 
 # ohmyzsh cache dir
 export ZSH_CACHE_DIR=$HOME/.zsh/cache
+mkdir -p "$ZSH_CACHE_DIR/completions"
 
 # k3s kubeconfig
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
