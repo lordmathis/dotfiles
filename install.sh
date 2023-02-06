@@ -3,6 +3,7 @@
 if [ $# -eq 0 ]
   then
     echo "Git branch name missing"
+    exit 1;
 fi
 
 echo ".dotfiles" >> $HOME/.gitignore
