@@ -6,7 +6,11 @@ My dotfiles. If you want to use them fork or clone the repo. Each branch has spe
 
 * [git](https://git-scm.com/), [zsh](http://www.zsh.org/) and [bat](https://github.com/sharkdp/bat)
 
-## Usage
+## Install
+
+`curl https://git.namesny.com/Mathis/dotfiles/raw/branch/master/install.sh | zsh -s -- <branch name>`
+
+## Manual install
 
 * `echo ".dotfiles" >> .gitignore`
 * `git clone --bare git@git.namesny.com:Mathis/dotfiles.git $HOME/.dotfiles`
