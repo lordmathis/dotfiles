@@ -16,6 +16,7 @@ export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 # ohmyzsh cache dir
 export ZSH_CACHE_DIR=$HOME/.zsh/cache
+mkdir -p "$ZSH_CACHE_DIR/completions"
 
 # Editor
 export EDITOR=nvim
