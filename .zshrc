@@ -14,6 +14,9 @@ export HISTSIZE=15000 # keep 15,000 lines in memory
 export SAVEHIST=10000 # but save only 10,000 of them
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
+# ohmyzsh cache dir
+export ZSH_CACHE_DIR=$HOME/.zsh/cache
+
 # Editor
 export EDITOR=nvim
 export GIT_EDITOR=nvim
@@ -80,6 +83,7 @@ source ~/.zsh/ohmyzsh/plugins/docker/_docker
 source ~/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/golang/golang.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/helm/helm.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/jsontools/jsontools.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh
