@@ -13,6 +13,12 @@ export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
+# ohmyzsh cache dir
+export ZSH_CACHE_DIR=$HOME/.zsh/cache
+
+# k3s kubeconfig
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+
 # Compinit
 autoload -Uz compinit
 compinit
@@ -26,6 +32,7 @@ source ~/.zsh/ohmyzsh/plugins/docker/_docker
 source ~/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/golang/golang.plugin.zsh
+source ~/.zsh/ohmyzsh/plugins/helm/helm.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/jsontools/jsontools.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/kubectl/kubectl.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/sudo/sudo.plugin.zsh
