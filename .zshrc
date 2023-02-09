@@ -50,6 +50,9 @@ source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # Set Prompt
 setopt promptsubst
 
+# Kubectl completions fix
+source <(kubectl completion zsh)
+
 # Bindkeys
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
