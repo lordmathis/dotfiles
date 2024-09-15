@@ -7,7 +7,7 @@ if [ $# -eq 0 ]
 fi
 
 echo ".dotfiles" >> $HOME/.gitignore
-git clone --bare https://git.namesny.com/Mathis/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/LordMathis/dotfiles.git $HOME/.dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 config checkout $1
 config submodule init

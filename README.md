@@ -8,12 +8,12 @@ My dotfiles. If you want to use them fork or clone the repo. Each branch has spe
 
 ## Install
 
-`curl https://git.namesny.com/Mathis/dotfiles/raw/branch/main/install.sh | zsh -s -- <branch name>`
+`curl https://raw.githubusercontent.com/LordMathis/dotfiles/main/install.zsh | zsh -s -- <branch name>`
 
 ## Manual install
 
 * `echo ".dotfiles" >> .gitignore`
-* `git clone --bare git@git.namesny.com:Mathis/dotfiles.git $HOME/.dotfiles`
+* `git clone --bare git@github.com:LordMathis/dotfiles.git $HOME/.dotfiles`
 * `alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'`
 * `config checkout <branch-name>`
 * `config submodule init`
