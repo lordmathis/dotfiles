@@ -29,7 +29,7 @@ compinit
 ## Oh My Zsh
 source ~/.zsh/ohmyzsh/plugins/pip/pip.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/command-not-found/command-not-found.plugin.zsh
-source ~/.zsh/ohmyzsh/plugins/docker/_docker
+source ~/.zsh/ohmyzsh/plugins/docker/docker.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/docker-compose/docker-compose.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/git/git.plugin.zsh
 source ~/.zsh/ohmyzsh/plugins/golang/golang.plugin.zsh
