@@ -22,11 +22,6 @@ mkdir -p "$ZSH_CACHE_DIR/completions"
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
-# VTE
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
-
 # Distro specific aliases
 DISTRO=`cat /etc/os-release | grep ^ID= | cut -f2 -d'='`
 if [ "$DISTRO" = 'arch' ]; then
