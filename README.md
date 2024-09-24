@@ -8,7 +8,7 @@ My dotfiles. If you want to use them fork or clone the repo. Each branch has spe
 
 ## Install
 
-`curl https://raw.githubusercontent.com/LordMathis/dotfiles/main/install.zsh | zsh -s -- <branch name>`
+`curl https://raw.githubusercontent.com/LordMathis/dotfiles/main/install.sh | zsh -s -- <branch name>`
 
 ## Manual install
 
