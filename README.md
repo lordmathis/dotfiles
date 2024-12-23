@@ -20,4 +20,4 @@ My dotfiles. If you want to use them fork or clone the repo. Each branch has spe
 * `config submodule update`
 * `source .zshrc`
 
-## [Full Guide](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+**[Full Guide](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)**
