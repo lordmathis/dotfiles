@@ -97,6 +97,7 @@ npm() {
 }
 
 # Compinit
+autoload -Uz is-at-least
 autoload -Uz compinit
 compinit
 
