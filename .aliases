@@ -11,6 +11,12 @@ alias dol='docker logs -f'
 
 alias sudo='sudo '
 
-open () {
-    xdg-open "$@" &>/dev/null
-}
+alias ll='ls -lah'
+
+# Distro-specific aliases
+DISTRO=$(cat /etc/os-release | grep ^ID= | cut -f2 -d'=')
+if [ "$DISTRO" = 'arch' ]; then
+    alias cat='bat'
+else
+    alias cat='batcat'
+fi

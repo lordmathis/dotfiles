@@ -17,13 +17,62 @@ mkdir -p "$ZSH_CACHE_DIR/completions"
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
-# Distro specific aliases
-DISTRO=`cat /etc/os-release | grep ^ID= | cut -f2 -d'='`
-if [ "$DISTRO" = 'arch' ]; then
-  source $HOME/.aliases_arch
-else
-  source $HOME/.aliases_ubuntu
-fi
+open () {
+    xdg-open "$@" &>/dev/null
+}
+
+
+# Enhanced dotfiles config function
+config() {
+    # Helper function to avoid repetition
+    local _config_git() {
+        /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
+    }
+
+    # Special case for 'update' command
+    if [[ "$1" == "update" ]]; then
+        echo "Updating dotfiles repository..."
+
+        # Navigate to home directory
+        local current_dir=$(pwd)
+        cd $HOME
+
+        # Fetch latest changes from remote
+        _config_git fetch origin
+
+        # Get current branch name
+        local current_branch=$(_config_git branch --show-current)
+
+        if [ -z "$current_branch" ]; then
+            echo "Error: Could not determine current branch"
+            cd $current_dir
+            return 1
+        fi
+
+        echo "Current branch: $current_branch"
+
+        # Pull latest changes for current branch
+        echo "Pulling latest changes..."
+        _config_git pull origin $current_branch
+
+        # Update all submodules to their latest commits
+        echo "Updating submodules..."
+        _config_git submodule update --recursive --remote
+
+        # Show status
+        echo "Update complete! Current status:"
+        _config_git status --short
+
+        echo "Submodule status:"
+        _config_git submodule status
+
+        # Return to original directory
+        cd $current_dir
+    else
+        # Pass through to regular git command
+        _config_git "$@"
+    fi
+}
 
 # Node Version Manager
 
