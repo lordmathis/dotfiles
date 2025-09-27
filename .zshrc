@@ -60,7 +60,7 @@ config() {
 
         # Show status
         echo "Update complete! Current status:"
-        _config_git status --uno
+        _config_git status -uno
 
         echo "Submodule status:"
         _config_git submodule status
