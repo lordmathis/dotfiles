@@ -21,7 +21,6 @@ open () {
     xdg-open "$@" &>/dev/null
 }
 
-
 # Enhanced dotfiles config function
 config() {
     # Helper function to avoid repetition

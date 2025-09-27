@@ -2,8 +2,6 @@ alias mkdir='mkdir -p'
 
 alias vim='nvim'
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 alias doco='docker-compose'
 alias dops='docker ps -a'
 alias doe='docker exec'
