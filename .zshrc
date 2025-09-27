@@ -3,11 +3,6 @@ source $HOME/.aliases
 # Set $PATH
 export PATH=$HOME/bin:$PATH
 
-# Set Golang
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/Projects/golang
-export PATH=$PATH:$GOPATH/bin
-
 # History
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=15000 # keep 15,000 lines in memory
@@ -29,19 +24,6 @@ if [ "$DISTRO" = 'arch' ]; then
 else
   source $HOME/.aliases_ubuntu
 fi
-
-# Conda
-__conda_setup="$('/home/matus/bin/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/matus/bin/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/matus/bin/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/matus/bin/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
 
 # Node Version Manager
 

@@ -1,3 +1,2 @@
 
 alias cat='bat'
-alias update='yay -Syu'
