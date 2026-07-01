@@ -1,7 +1,7 @@
 source $HOME/.aliases
 
 # Set $PATH
-export PATH=$HOME/bin:$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/.opencode/bin
 
 # History
 export HISTFILE=$HOME/.zsh_history
